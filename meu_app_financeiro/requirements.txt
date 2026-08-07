@@ -1,0 +1,4 @@
+# UI + runtime desktop/mobile e CLI de build (flet build apk)
+flet[all]==0.28.3
+
+# SQLite vem na biblioteca padrão do Python (módulo sqlite3) — nada a instalar.

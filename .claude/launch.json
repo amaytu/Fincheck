@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fincheck-web",
+      "runtimeExecutable": "C:\\Users\\Usuario\\Documents\\GitHub\\Fincheck\\.venv\\Scripts\\flet.exe",
+      "runtimeArgs": [
+        "run",
+        "--web",
+        "--port",
+        "8550",
+        "C:\\Users\\Usuario\\Documents\\GitHub\\Fincheck\\meu_app_financeiro\\main.py"
+      ],
+      "port": 8550
+    }
+  ]
+}

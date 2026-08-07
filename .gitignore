@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Banco local gerado em tempo de execucao
+*.db
+*.db-journal
+storage/
+
+# Builds do Flet
+build/
+dist/
+*.apk
+*.aab
+
+# Editores
+.vscode/
+.idea/
