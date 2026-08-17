@@ -21,7 +21,7 @@ ASSETS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
 
 def main(page: ft.Page) -> None:
     # --- configuração da janela / tema ---------------------------------------
-    page.title = "Meu App Financeiro"
+    page.title = "Fincheck"
     page.theme = theme.app_theme()
     page.theme_mode = ft.ThemeMode.LIGHT
     page.bgcolor = theme.BACKGROUND
@@ -31,8 +31,11 @@ def main(page: ft.Page) -> None:
     page.window.min_width = 360
 
     # --- composição das dependências (MVVM) ----------------------------------
+    # O app nasce zerado: sem lançamentos, sem categorias e com renda 0.
+    # Para ver a interface preenchida durante o desenvolvimento, rode com
+    # FINCHECK_SEED=1 (nunca ligado numa build de produção).
     connection = get_connection()
-    state = AppState(connection)
+    state = AppState(connection, seed_mock=os.getenv("FINCHECK_SEED") == "1")
 
     dashboard_vm = DashboardViewModel(state)
     reports_vm = ReportsViewModel(state)

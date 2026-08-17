@@ -75,7 +75,7 @@ class ReportsView:
             navigation_bar=ft.NavigationBar(
                 selected_index=1,
                 bgcolor=theme.SURFACE,
-                indicator_color="#332FBF8F",
+                indicator_color="#33CDAD56",
                 on_change=self._on_nav_change,
                 destinations=[
                     ft.NavigationBarDestination(icon=ft.Icons.DASHBOARD_OUTLINED, label="Resumo"),

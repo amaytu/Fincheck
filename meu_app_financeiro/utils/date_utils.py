@@ -39,3 +39,14 @@ def month_short_label(key: str) -> str:
     """'2026-08' -> 'Ago/2026'."""
     year, month = split_key(key)
     return f"{MONTHS_PT[month - 1][:3]}/{year}"
+
+
+def month_options(start: str, months_ahead: int = 60) -> list[tuple[str, str]]:
+    """Competencias de `start` em diante: [('2026-08', 'Agosto 2026'), ...].
+
+    Usado no seletor "Repetir ate" do formulario de lancamento.
+    """
+    return [
+        (key, month_label(key))
+        for key in (shift_month(start, i) for i in range(months_ahead + 1))
+    ]

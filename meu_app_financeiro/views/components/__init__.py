@@ -1,5 +1,5 @@
 from . import theme
-from .balance_card import balance_card
+from .balance_card import WALLET_COLORS, balance_card, wallet_cards
 from .category_bar import breakdown_card, category_bar
 from .donut_chart import chart_legend, donut_chart
 from .section_panel import SECTION_COLORS, section_panel
@@ -9,6 +9,8 @@ from .transaction_tile import transaction_tile
 __all__ = [
     "theme",
     "balance_card",
+    "wallet_cards",
+    "WALLET_COLORS",
     "category_bar",
     "breakdown_card",
     "donut_chart",

@@ -6,6 +6,11 @@ from .app_state import AppState
 from .observable import Observable
 
 
+def _to_field(value: float) -> str:
+    """Valor formatado para preencher o input (sem o simbolo R$)."""
+    return f"{value:.2f}".replace(".", ",")
+
+
 class ProfileViewModel(Observable):
     def __init__(self, state: AppState) -> None:
         super().__init__()
@@ -21,8 +26,15 @@ class ProfileViewModel(Observable):
 
     @property
     def income_text(self) -> str:
-        """Valor formatado para preencher o input (sem o simbolo R$)."""
-        return f"{self.monthly_income:.2f}".replace(".", ",")
+        return _to_field(self.monthly_income)
+
+    @property
+    def vr_text(self) -> str:
+        return _to_field(self.state.profile.vr_income)
+
+    @property
+    def va_text(self) -> str:
+        return _to_field(self.state.profile.va_income)
 
     def validate(self, name: str, income_text: str) -> str | None:
         """Retorna a mensagem de erro, ou None se estiver tudo certo."""
@@ -32,6 +44,20 @@ class ProfileViewModel(Observable):
             return "Informe uma renda mensal maior que zero."
         return None
 
-    def save(self, name: str, income_text: str) -> None:
-        """Persiste e notifica o AppState (a Tela 1 se atualiza sozinha)."""
-        self.state.update_profile(name.strip(), parse_currency(income_text))
+    def save(
+        self,
+        name: str,
+        income_text: str,
+        vr_text: str = "",
+        va_text: str = "",
+    ) -> None:
+        """Persiste e notifica o AppState (a Tela 1 se atualiza sozinha).
+
+        VR e VA sao opcionais: em branco valem zero e as carteiras somem da tela.
+        """
+        self.state.update_profile(
+            name.strip(),
+            parse_currency(income_text),
+            parse_currency(vr_text),
+            parse_currency(va_text),
+        )

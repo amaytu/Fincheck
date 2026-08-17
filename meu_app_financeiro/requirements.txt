@@ -1,4 +1,9 @@
-# UI + runtime desktop/mobile e CLI de build (flet build apk)
-flet[all]==0.28.3
+# Dependencias EMPACOTADAS DENTRO do app (lidas pelo `flet build apk`).
+# Mantenha so o que roda no dispositivo: flet[all] traria os binarios de
+# desktop para dentro do APK.
+flet==0.28.3
 
-# SQLite vem na biblioteca padrão do Python (módulo sqlite3) — nada a instalar.
+# SQLite vem na biblioteca padrao do Python (modulo sqlite3) — nada a instalar.
+#
+# Na SUA maquina, para usar o comando `flet build`, instale tambem o CLI:
+#     pip install "flet[all]==0.28.3"

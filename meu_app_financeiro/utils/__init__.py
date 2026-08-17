@@ -2,6 +2,7 @@ from .date_utils import (
     current_month_key,
     month_key,
     month_label,
+    month_options,
     month_short_label,
     shift_month,
 )
@@ -17,6 +18,7 @@ __all__ = [
     "current_month_key",
     "month_key",
     "month_label",
+    "month_options",
     "month_short_label",
     "shift_month",
     "format_compact",

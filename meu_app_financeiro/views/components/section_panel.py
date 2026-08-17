@@ -33,6 +33,7 @@ def section_panel(
     total: float,
     on_add: Callable[[TransactionType], None],
     expanded: bool = True,
+    read_only: bool = False,
 ) -> ft.Container:
     accent = SECTION_COLORS[type_]
 
@@ -99,6 +100,6 @@ def section_panel(
                     ft.Text(f"{len(tiles)} item(ns)", size=11, color=theme.TEXT_MUTED),
                 ],
             ),
-            controls=[*(tiles or [empty_hint]), add_button],
+            controls=[*(tiles or [empty_hint]), *([] if read_only else [add_button])],
         ),
     )

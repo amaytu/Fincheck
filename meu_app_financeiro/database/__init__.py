@@ -4,6 +4,7 @@ from .repositories import (
     CategoryRepository,
     MonthRepository,
     ProfileRepository,
+    SeriesRepository,
     TransactionRepository,
 )
 from .schema import init_db
@@ -16,5 +17,6 @@ __all__ = [
     "CategoryRepository",
     "MonthRepository",
     "ProfileRepository",
+    "SeriesRepository",
     "TransactionRepository",
 ]

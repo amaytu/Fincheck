@@ -4,10 +4,14 @@ import re
 
 import flet as ft
 
-# --- Paleta -----------------------------------------------------------------
-PRIMARY = "#1E6F5C"
-PRIMARY_DARK = "#154C40"
-ACCENT = "#2FBF8F"
+# --- Paleta da marca Fincheck -----------------------------------------------
+# Amostradas diretamente da arte oficial (assets/banner.png).
+PRIMARY = "#104535"       # verde Fincheck
+PRIMARY_DARK = "#0A2E23"
+ACCENT = "#CDAD56"        # dourado Fincheck
+GOLD = "#CDAD56"
+GOLD_SOFT = "#E2CA8A"
+ON_PRIMARY_MUTED = "#9FBFB2"  # texto secundario sobre o verde
 BACKGROUND = "#F4F6F8"
 SURFACE = "#FFFFFF"
 TEXT = "#16202A"
